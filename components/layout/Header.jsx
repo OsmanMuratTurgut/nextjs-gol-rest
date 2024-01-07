@@ -3,19 +3,27 @@ import Logo from "../ui/Logo";
 import { FaUserAlt, FaShoppingCart, FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import Search from "../ui/Search";
+import { useRouter } from "next/router";
 
 
 const Header = () => {
     const [isSearchModal, setIsSearchModal] = useState(false)
-    const [isMenuModal, setIsMenuModal] = useState(false);
+    const [isMenuModal, setIsMenuModal] = useState(false)
+
+    const router = useRouter()
   return (
     <>
-    <div className="h-[5.5rem] bg-secondary">
+   <div
+      className={`h-[5.5rem] z-50 relative ${
+        router.asPath === "/" ? "bg-transparent" : "bg-secondary"
+      }`}
+    >
+      
       <div className="container mx-auto flex justify-between items-center h-full text-white">
         <div>
           <Logo />
         </div>
-        <div  className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-full sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden ${
+        <div  className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-screen sm:text-white text-black sm:bg-transparent bg-white sm:flex hidden  ${
             isMenuModal === true && "!grid place-content-center"
           }`}>
           <ul className="flex gap-x-2 sm:flex-row flex-col items-center">
@@ -62,7 +70,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-     
     </div>
 
     {isSearchModal &&  (

@@ -1,6 +1,10 @@
+import Carosel from "@/components/ui/Carosel"
+
 const Home = () => {
   return (
-    <div className="text-center font-dancing bg-primary text-3xl">Home Page</div>
+    <div className="relative -mt-10">
+      <Carosel />
+    </div>
   )
 }
 
