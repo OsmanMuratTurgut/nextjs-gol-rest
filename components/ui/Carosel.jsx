@@ -11,7 +11,7 @@ const Carousel = () => {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 30000,
+    autoplaySpeed: 3000,
     appendDots: (dots) => (
       <div>
         <ul className="container mx-auto w-full text-start">{dots}</ul>
@@ -66,6 +66,16 @@ const Carousel = () => {
             <p className="sm:w-2/5 w-full">Çorba - Kavurma - Salata - İçecek</p>
             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
               170 TL
+            </button>
+            <button className="btn-primary">Online Sipariş</button>
+          </div>
+        </div>
+        <div>
+          <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
+            <Title addClass="text-5xl">Tandır Kebap Menü Kampanya</Title>
+            <p className="sm:w-2/5 w-full">Çorba - Tandır Kebap - Salata - İçecek</p>
+            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
+              230 TL
             </button>
             <button className="btn-primary">Online Sipariş</button>
           </div>
