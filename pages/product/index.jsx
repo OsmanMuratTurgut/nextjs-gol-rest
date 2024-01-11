@@ -1,10 +1,10 @@
-import Title from "@/components/ui/Title";
+import Title from "../../components/ui/Title";
 import Image from "next/image";
 
 const Index = () => {
   return (
-    <div className="flex items-center h-screen gap-20 py-20 flex-wrap ">
-      <div className="relative md:flex-1 w-[80%] h-[80%] mx-20">
+    <div className="flex items-center md:h-[calc(100vh_-_88px)] gap-5 py-20 flex-wrap ">
+      <div className="relative md:flex-1 md:w-[80%] md:h-[80%] w-36 h-36 mx-auto">
         <Image src="/images/pide-1.jpeg" alt="" layout="fill" objectFit="contain" />
       </div>
       <div className="md:flex-1 md:text-start text-center">

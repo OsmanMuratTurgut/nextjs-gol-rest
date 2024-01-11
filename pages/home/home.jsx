@@ -4,7 +4,7 @@ import MenuWrapper from "../../components/product/MenuWrapper";
 import Reservation from "../../components/reservation/Reservation";
 import Campaigns from "../../components/ui/Campaigns";
 import Carosel from "../../components/ui/Carosel";
-import Customers from "@/components/customers/Customers";
+import Customers from "../../components/customers/Customers";
 
 const Home = () => {
   return (
