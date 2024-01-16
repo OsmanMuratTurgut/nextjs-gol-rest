@@ -1,12 +1,28 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
 import { registerSchema } from "../../schema/register";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const Register = () => {
+  const { push } = useRouter();
   const onSubmit = async (values, actions) => {
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/users/register`,
+        values
+      );
+      if (res.status === 200) {
+        toast.success("Hesabınız açıldı");
+        push("/auth/login");
+      }
+    } catch (err) {
+      toast.error(err.response.data.message);
+      console.log(err);
+    }
     actions.resetForm();
   };
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
@@ -66,7 +82,7 @@ const Register = () => {
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-6">Register</Title>
+        <Title addClass="text-[40px] mb-6">Hesap Aç</Title>
         <div className="flex flex-col gap-y-3 w-full">
           {inputs.map((input) => (
             <Input
@@ -78,10 +94,10 @@ const Register = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary">REGISTER</button>
+          <button className="btn-primary" type="submit">Kayıt Ol</button>
           <Link href="/auth/login">
             <span className="text-sm underline cursor-pointer text-secondary">
-              Do you have a account?
+              Zaten bir hesabın var mı ?
             </span>
           </Link>
         </div>
