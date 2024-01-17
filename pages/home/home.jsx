@@ -6,12 +6,12 @@ import Campaigns from "../../components/ui/Campaigns";
 import Carosel from "../../components/ui/Carosel";
 import Customers from "../../components/customers/Customers";
 
-const Home = ({ categoryList }) => {
+const Index = ({ categoryList, productList }) => {
   return (
     <React.Fragment>
       <Carosel />
       <Campaigns />
-      <MenuWrapper categoryList={categoryList} />
+      <MenuWrapper categoryList={categoryList} productList={productList} />
       <About />
       <Reservation />
       <Customers />
@@ -19,4 +19,4 @@ const Home = ({ categoryList }) => {
   );
 };
 
-export default Home;
+export default Index;

@@ -3,21 +3,24 @@ import dbConnect from "../../../util/dbConnect";
 
 const handler = async (req, res) => {
   await dbConnect();
-  const { method } = req;
+  const {
+    method,
+    query: { id },
+  } = req;
 
   if (method === "GET") {
     try {
-      const products = await Product.find();
-      res.status(200).json(products);
+      const product = await Product.findById(id);
+      res.status(200).json(product);
     } catch (err) {
       console.log(err);
     }
   }
 
-  if (method === "POST") {
+  if (method === "DELETE") {
     try {
-      const newProduct = await Product.create(req.body);
-      res.status(201).json(newProduct);
+      const product = await Product.findByIdAndDelete(id);
+      res.status(200).json(product);
     } catch (err) {
       console.log(err);
     }
