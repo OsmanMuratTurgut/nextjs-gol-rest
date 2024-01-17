@@ -6,12 +6,12 @@ import Campaigns from "../../components/ui/Campaigns";
 import Carosel from "../../components/ui/Carosel";
 import Customers from "../../components/customers/Customers";
 
-const Home = () => {
+const Home = ({ categoryList }) => {
   return (
     <React.Fragment>
       <Carosel />
       <Campaigns />
-      <MenuWrapper />
+      <MenuWrapper categoryList={categoryList} />
       <About />
       <Reservation />
       <Customers />

@@ -1,18 +1,26 @@
+import React, { useState } from "react";
 import Title from "../ui/Title";
 import MenuItem from "./MenuItem";
 
-const MenuWrapper = () => {
+const MenuWrapper = ({ categoryList }) => {
+  const [active, setActive] = useState(0);
   return (
     <div className="container mx-auto  mb-16">
       <div className="flex flex-col items-center w-full">
         <Title addClass="text-[40px]">Menüler</Title>
         <div className="mt-10">
-          <button className="px-6 py-2 bg-secondary rounded-3xl text-white">
-            Hepsi
-          </button>
-          <button className="px-6 py-2 rounded-3xl ">Pide</button>
-          <button className="px-6 py-2  rounded-3xl ">Izgara</button>
-          <button className="px-6 py-2  rounded-3xl ">İçecekler</button>
+        {categoryList &&
+            categoryList.map((category, index) => (
+              <button
+                className={`px-6 py-2  rounded-3xl ${
+                  index === active && "bg-secondary text-white"
+                }`}
+                key={category._id}
+                onClick={() => setActive(index)}
+              >
+                {category.title}
+              </button>
+            ))}
         </div>
       </div>
 
