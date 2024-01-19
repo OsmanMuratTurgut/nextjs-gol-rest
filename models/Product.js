@@ -20,6 +20,10 @@ const ProductSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    portionSize: {
+      type: Number,
+     
+    },
     img: {
       type: String,
       required: true,

@@ -57,16 +57,16 @@ const Cart = ({ userList }) => {
                 <thead className="text-xs text-gray-400 uppercase bg-gray-700">
                   <tr>
                     <th scope="col" className="py-3 px-6">
-                      PRODUCT
+                      ÜRÜN
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      EXTRAS
+                      EKSTRA
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      PRICE
+                      FİYAT
                     </th>
                     <th scope="col" className="py-3 px-6">
-                      QUANTITY
+                      MİKTAR
                     </th>
                   </tr>
                 </thead>
@@ -93,7 +93,7 @@ const Cart = ({ userList }) => {
                           : "empty"}
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
-                        ${product.price}
+                        {product.price}₺
                       </td>
                       <td className="py-4 px-6 font-medium whitespace-nowrap hover:text-white">
                         {product.quantity}

@@ -7,6 +7,10 @@ const CategorySchema = new mongoose.Schema(
       required: true,
       maxlength: 60,
     },
+    portionSize: {
+      type: Number,
+     
+    },
   },
   { timestamps: true }
 );

@@ -11,13 +11,14 @@ const AddProduct = ({ setIsProductModal }) => {
 
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [category, setCategory] = useState("pizza");
+  const [category, setCategory] = useState("");
   const [prices, setPrices] = useState([]);
 
   const [extra, setExtra] = useState("");
   const [extraOptions, setExtraOptions] = useState([]);
 
   const [categories, setCategories] = useState([]);
+  const [size, setSize] = useState(0);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -48,7 +49,14 @@ const AddProduct = ({ setIsProductModal }) => {
     };
 
     reader.readAsDataURL(changeEvent.target.files[0]);
-    
+  };
+
+  const handleSelectChange = (e) => {
+    const selectedOption = e.target.options[e.target.selectedIndex];
+    const selectedSize = selectedOption.getAttribute("data-size");
+
+    setCategory(e.target.value);
+    setSize(selectedSize);
   };
 
   const changePrice = (e, index) => {
@@ -76,6 +84,7 @@ const AddProduct = ({ setIsProductModal }) => {
         category: category.toLowerCase(),
         prices,
         extraOptions,
+        portionSize:size,
       };
 
       const res = await axios.post(
@@ -92,12 +101,14 @@ const AddProduct = ({ setIsProductModal }) => {
     }
   };
 
+  console.log(categories);
+
   return (
     <div className="fixed top-0 left-0 w-screen h-screen z-50 after:content-[''] after:w-screen after:h-screen after:bg-white after:absolute after:top-0 after:left-0 after:opacity-60 grid place-content-center">
       <OutsideClickHandler onOutsideClick={() => setIsProductModal(false)}>
         <div className="w-full h-full grid place-content-center relative">
           <div className="relative z-50 md:w-[600px] w-[370px]  bg-white border-2 p-10 rounded-3xl">
-            <Title addClass="text-[40px] text-center">Add a New Product</Title>
+            <Title addClass="text-[40px] text-center">Yeni Ürün Ekle</Title>
             <div className="flex flex-col text-sm mt-6">
               <label className="flex gap-2 items-center">
                 <input
@@ -106,7 +117,7 @@ const AddProduct = ({ setIsProductModal }) => {
                   className="hidden"
                 />
                 <button className="btn-primary !rounded-none !bg-blue-600 pointer-events-none">
-                  Choose an Image
+                  Resim Seçiniz
                 </button>
                 {imageSrc && (
                   <div>
@@ -121,7 +132,7 @@ const AddProduct = ({ setIsProductModal }) => {
               </label>
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Title</span>
+              <span className="font-semibold mb-[2px]">Başlık</span>
               <input
                 type="text"
                 className="border-2 p-1 text-sm px-1 outline-none"
@@ -130,7 +141,7 @@ const AddProduct = ({ setIsProductModal }) => {
               />
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Description</span>
+              <span className="font-semibold mb-[2px]">Açıklama</span>
               <textarea
                 className="border-2 p-1 text-sm px-1 outline-none"
                 placeholder="Write a title..."
@@ -138,17 +149,18 @@ const AddProduct = ({ setIsProductModal }) => {
               />
             </div>
             <div className="flex flex-col text-sm mt-4">
-              <span className="font-semibold mb-[2px]">Select Category</span>
+              <span className="font-semibold mb-[2px]">Kategori</span>
               <select
                 className="border-2 p-1 text-sm px-1 outline-none"
                 placeholder="Write a title..."
-                onChange={(e) => setCategory(e.target.value)}
+                onChange={handleSelectChange}
               >
                 {categories.length > 0 &&
                   categories.map((category) => (
                     <option
                       value={category.title.toLowerCase()}
                       key={category._id}
+                      data-size={category.portionSize}
                     >
                       {category.title}
                     </option>
@@ -156,39 +168,56 @@ const AddProduct = ({ setIsProductModal }) => {
               </select>
             </div>
             <div className="flex flex-col text-sm mt-4 w-full">
-              <span className="font-semibold mb-[2px]">Prices</span>
-              {category === "pizza" ? (
+              <span className="font-semibold mb-[2px]">Fiyat</span>
+              {size === "2" ? (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="small"
+                    placeholder="Tek"
                     onChange={(e) => changePrice(e, 0)}
                   />
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="medium"
+                    placeholder="Bir Buçuk"
                     onChange={(e) => changePrice(e, 1)}
                   />
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="large"
+                    placeholder="Duble"
                     onChange={(e) => changePrice(e, 2)}
                   />
                 </div>
-              ) : (
+              ) : size==="1" ? (
+                <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
+                <input
+                  type="number"
+                  className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
+                  placeholder="Tam"
+                  onChange={(e) => changePrice(e, 0)}
+                />
+                <input
+                  type="number"
+                  className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
+                  placeholder="Az"
+                  onChange={(e) => changePrice(e, 1)}
+                />
+              </div>
+              )
+              : (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
                     className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                    placeholder="small"
+                    placeholder="Fiyat"
                     onChange={(e) => changePrice(e, 0)}
                   />
                 </div>
               )}
             </div>
+
             <div className="flex flex-col text-sm mt-4 w-full">
               <span className="font-semibold mb-[2px]">Extra</span>
               <div className="flex  gap-6 w-full md:flex-nowrap flex-wrap">
@@ -210,7 +239,7 @@ const AddProduct = ({ setIsProductModal }) => {
                     setExtra({ ...extra, [e.target.name]: e.target.value })
                   }
                 />
-                 <button className="btn-primary ml-auto" onClick={handleExtra}>
+                <button className="btn-primary ml-auto" onClick={handleExtra}>
                   Add
                 </button>
               </div>
@@ -231,7 +260,6 @@ const AddProduct = ({ setIsProductModal }) => {
               </div>
             </div>
             <div className="flex justify-end">
-             
               <button
                 className="btn-primary !bg-success"
                 onClick={handleCreate}
