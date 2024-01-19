@@ -10,8 +10,10 @@ const Footer = () => {
             <Title addClass="text-[30px]">İletişim</Title>
             <div className="flex flex-col gap-y-2 mt-3">
               <div>
+                <a href="https://maps.app.goo.gl/TkD3c2deXo5a2ECg9" target="_blank" rel="noreferrer">
                 <i className="fa fa-map-marker"></i>
                 <span className="inline-block ml-2">Adres</span>
+                </a>
               </div>
               <div>
                 <i className="fa fa-phone"></i>
