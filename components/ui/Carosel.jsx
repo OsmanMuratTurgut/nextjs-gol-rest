@@ -38,7 +38,7 @@ const Carousel = () => {
       <Slider {...settings}>
         <div>
           <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
-            <Title addClass="text-5xl">Burdur Şiş Menü Kampanya</Title>
+            <Title addClass="text-5xl">Burdur Şiş Menü</Title>
             <p className="sm:w-2/5 w-full">
               Çorba - Tek Burdur Şiş - Salata - İçecek
             </p>
@@ -73,7 +73,9 @@ const Carousel = () => {
         <div>
           <div className="mt-48 container mx-auto  text-white flex flex-col items-start gap-y-8">
             <Title addClass="text-5xl">Tandır Kebap Menü Kampanya</Title>
-            <p className="sm:w-2/5 w-full">Çorba - Tandır Kebap - Salata - İçecek</p>
+            <p className="sm:w-2/5 w-full">
+              Çorba - Tandır Kebap - Salata - İçecek
+            </p>
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full">
               230 TL
             </button>

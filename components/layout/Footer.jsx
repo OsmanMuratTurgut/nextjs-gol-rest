@@ -31,31 +31,31 @@ const Footer = () => {
             <div className="flex items-center justify-center mt-5 gap-x-2">
               <a
                 href=""
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full "
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className="fa fa-facebook"></i>
               </a>
               <a
                 href=""
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full"
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className="fa fa-twitter"></i>
               </a>
               <a
                 href=""
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full"
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className="fa fa-linkedin"></i>
               </a>
               <a
                 href=""
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full"
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className="fa fa-instagram"></i>
               </a>
               <a
                 href=""
-                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full"
+                className="w-8 h-8 grid place-content-center bg-white text-secondary rounded-full hover:text-white hover:bg-primary transition-all"
               >
                 <i className="fa fa-pinterest"></i>
               </a>
