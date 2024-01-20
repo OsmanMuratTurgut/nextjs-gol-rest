@@ -2,13 +2,13 @@ import * as Yup from "yup";
 
 export const profileSchema = Yup.object({
   fullName: Yup.string()
-    .required("Full name is required.")
-    .min(3, "Full name must be at least 3 characters."),
+    .required("Ad Soyad zorunludur")
+    .min(3, "En az 3 karekter"),
   phoneNumber: Yup.string()
-    .required("Phone Number is required.")
-    .min(10, "Phone number must be at least 10 characters."),
-  email: Yup.string().required("Email is required.").email("Email is invalid."),
-  address: Yup.string().required("Address is required."),
-  job: Yup.string().required("Job is required."),
-  bio: Yup.string().required("Bio is required."),
+    .required("Telefon numarası zorunludur.")
+    .min(10, "Telefon numarası en az 10 karekter olmalıdır."),
+  email: Yup.string().required("Email zorunludur.").email("Geçerli bir email giriniz."),
+  address: Yup.string().required("Address zorunludur."),
+  // job: Yup.string().required("Job is required."),
+  // bio: Yup.string().required("Bio is required."),
 });
