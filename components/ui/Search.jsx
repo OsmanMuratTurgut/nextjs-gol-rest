@@ -66,11 +66,11 @@ const Search = ({ setIsSearchModal }) => {
                         />
                       </div>
                       <span className="font-bold">{product?.title}</span>
-                      <span className="font-bold">${product.prices[0]}</span>
+                      <span className="font-bold">{product.prices[0]}₺</span>
                     </li>
                   ))
                 ) : (
-                  <p className="text-center font-semibold">No results found!</p>
+                  <p className="text-center font-semibold">Sonuç bulunamadı!</p>
                 )}
               </ul>
             ) : (

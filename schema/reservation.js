@@ -2,12 +2,12 @@ import * as Yup from "yup";
 
 export const reservationSchema = Yup.object({
   fullName: Yup.string()
-    .required("Full name is required.")
-    .min(3, "Full name must be at least 3 characters."),
+    .required("Adınızı soyadınızı yazınız")
+    .min(3, "En az 3 karekter olmalıdır."),
   phoneNumber: Yup.string()
-    .required("Full name is required.")
-    .min(10, "Phone number must be at least 10 characters."),
-  email: Yup.string().required("Email is required.").email("Email is invalid."),
-  persons: Yup.string().required("Persons is required."),
-  date: Yup.string().required("Date is required."),
+    .required("Telefon numaranızı yazınız")
+    .min(10, "En az 10 karakter olmalıdır"),
+  email: Yup.string().required("Email zorunludur").email("Geçerli bir email giriniz"),
+  desc: Yup.string().required("Yorum yazmak zorunludur."),
+  // date: Yup.string().required("Date is required."),
 });

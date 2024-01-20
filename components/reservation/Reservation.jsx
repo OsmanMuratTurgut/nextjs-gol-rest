@@ -20,8 +20,7 @@ const Reservation = () => {
         fullName: "",
         phoneNumber: "",
         email: "",
-        persons: "",
-        date: "",
+        desc: "",
       },
       onSubmit,
       validationSchema: reservationSchema,
@@ -59,26 +58,18 @@ const Reservation = () => {
     },
     {
       id: 4,
-      name: "persons",
-      type: "number",
-      placeholder: "Kişi Sayısı",
-      value: values.persons,
-      errorMessage: errors.persons,
-      touched: touched.persons,
-    },
-    {
-      id: 5,
-      name: "date",
-      type: "datetime-local",
-      value: values.date,
-      errorMessage: errors.date,
-      touched: touched.date,
+      name: "desc",
+      type: "textarea",
+      placeholder: "Yorumunuzu yazınız",
+      value: values.desc,
+      errorMessage: errors.desc,
+      touched: touched.desc,
     },
   ];
 
   return (
     <div className="container mx-auto py-12">
-      <Title addClass="text-[40px] mb-10">Rezervasyon</Title>
+      <Title addClass="text-[40px] mb-10">Yorumunuz</Title>
       <div className="flex justify-between flex-wrap-reverse gap-10">
       <form className="lg:flex-1 w-full" onSubmit={handleSubmit}>
           <div className="flex flex-col gap-y-3">
