@@ -70,7 +70,7 @@ const Search = ({ setIsSearchModal }) => {
                     </li>
                   ))
                 ) : (
-                  <p className="text-center font-semibold">Sonuç bulunamadı!</p>
+                  <p className="text-center font-semibold">Sonuç bulunamadı</p>
                 )}
               </ul>
             ) : (

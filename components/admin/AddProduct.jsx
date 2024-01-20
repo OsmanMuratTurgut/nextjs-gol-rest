@@ -136,7 +136,7 @@ const AddProduct = ({ setIsProductModal }) => {
               <input
                 type="text"
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="Ürün adını yazınız"
                 onChange={(e) => setTitle(e.target.value)}
               />
             </div>
@@ -144,7 +144,7 @@ const AddProduct = ({ setIsProductModal }) => {
               <span className="font-semibold mb-[2px]">Açıklama</span>
               <textarea
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="Açıklama yazınız"
                 onChange={(e) => setDesc(e.target.value)}
               />
             </div>
@@ -152,7 +152,7 @@ const AddProduct = ({ setIsProductModal }) => {
               <span className="font-semibold mb-[2px]">Kategori</span>
               <select
                 className="border-2 p-1 text-sm px-1 outline-none"
-                placeholder="Write a title..."
+                placeholder="Kategori Seçiniz"
                 onChange={handleSelectChange}
               >
                 {categories.length > 0 &&
@@ -223,7 +223,7 @@ const AddProduct = ({ setIsProductModal }) => {
                 <input
                   type="text"
                   className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="item"
+                  placeholder="ekstra ürün"
                   name="text"
                   onChange={(e) =>
                     setExtra({ ...extra, [e.target.name]: e.target.value })
@@ -232,14 +232,14 @@ const AddProduct = ({ setIsProductModal }) => {
                 <input
                   type="number"
                   className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="price"
+                  placeholder="Fiyat"
                   name="price"
                   onChange={(e) =>
                     setExtra({ ...extra, [e.target.name]: e.target.value })
                   }
                 />
                 <button className="btn-primary ml-auto" onClick={handleExtra}>
-                  Add
+                  Ekle
                 </button>
               </div>
               <div className="mt-2 flex gap-2">
