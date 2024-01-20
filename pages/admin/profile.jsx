@@ -30,7 +30,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="flex px-10 min-h-[calc(100vh_-_433px)] lg:flex-row flex-col lg:mb-0 mb-10">
+   <div className="flex px-10 min-h-[calc(100vh_-_433px)] lg:flex-row flex-col lg:mb-0 mb-10">
       <div className="lg:w-80 w-100 flex-shrink-0">
         <div className="relative flex flex-col items-center px-10 py-5 border border-b-0">
           <Image
@@ -67,11 +67,11 @@ const Profile = () => {
             }`}
             onClick={() => setTabs(2)}
           >
-            <i className="fa fa-key"></i>
+             <i className="fa fa-ellipsis-h"></i>
             <button className="ml-1">Kategoriler</button>
           </li>
           <li
-             className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
+            className={`border border-t-0 w-full p-3 cursor-pointer hover:bg-primary hover:text-white transition-all ${
               tabs === 3 && "bg-primary text-white"
             }`}
             onClick={() => setTabs(3)}
@@ -98,9 +98,7 @@ const Profile = () => {
       <button
         className="btn-primary !w-12 !h-12 !p-0 absolute bottom-14 right-10 text-4xl"
         onClick={() => setIsProductModal(true)}
-      >
-        +
-      </button>
+      >+</button>
     </div>
   );
 };

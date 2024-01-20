@@ -27,7 +27,7 @@ const Carousel = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="relative h-full w-full">
           <Image
-            src="/images/sis-2.jpeg"
+            src="https://res.cloudinary.com/dyurhicc6/image/upload/v1705752639/gol-res/sis-2_qiolq7.webp"
             alt=""
             layout="fill"
             objectFit="cover"

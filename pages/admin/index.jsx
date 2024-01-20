@@ -63,7 +63,7 @@ const Login = () => {
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-6">Admin Login</Title>
+        <Title addClass="text-[40px] mb-6">Giriş</Title>
         <div className="flex flex-col gap-y-3 w-full">
           {inputs.map((input) => (
             <Input
@@ -75,10 +75,10 @@ const Login = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-3 mt-6">
-          <button className="btn-primary">LOGIN</button>
+          <button className="btn-primary">Giriş</button>
           <Link href="/">
             <span className="text-sm underline cursor-pointer text-secondary">
-              Home Page
+              Ana Sayfa
             </span>
           </Link>
         </div>

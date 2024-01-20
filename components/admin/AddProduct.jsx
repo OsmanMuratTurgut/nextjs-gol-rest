@@ -84,7 +84,7 @@ const AddProduct = ({ setIsProductModal }) => {
         category: category.toLowerCase(),
         prices,
         extraOptions,
-        portionSize:size,
+        portionSize: size,
       };
 
       const res = await axios.post(
@@ -190,23 +190,22 @@ const AddProduct = ({ setIsProductModal }) => {
                     onChange={(e) => changePrice(e, 2)}
                   />
                 </div>
-              ) : size==="1" ? (
+              ) : size === "1" ? (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
-                <input
-                  type="number"
-                  className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="Tam"
-                  onChange={(e) => changePrice(e, 0)}
-                />
-                <input
-                  type="number"
-                  className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
-                  placeholder="Az"
-                  onChange={(e) => changePrice(e, 1)}
-                />
-              </div>
-              )
-              : (
+                  <input
+                    type="number"
+                    className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
+                    placeholder="Tam"
+                    onChange={(e) => changePrice(e, 0)}
+                  />
+                  <input
+                    type="number"
+                    className="border-b-2 p-1 pl-0 text-sm px-1 outline-none w-36"
+                    placeholder="Az"
+                    onChange={(e) => changePrice(e, 1)}
+                  />
+                </div>
+              ) : (
                 <div className="flex justify-between gap-6 w-full md:flex-nowrap flex-wrap">
                   <input
                     type="number"
