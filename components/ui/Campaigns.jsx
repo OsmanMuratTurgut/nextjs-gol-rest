@@ -7,7 +7,7 @@ const CampaignItem = () => {
     <div className="bg-secondary flex-1 rounded-md py-5 px-[15px] flex items-center gap-x-4">
       <div className="relative md:w-44 md:h-44 w-36 h-36 after:content-['']   border-[5px] border-primary rounded-full overflow-hidden">
         <Image
-          src="/images/pide-2.jpeg"
+          src="https://res.cloudinary.com/dyurhicc6/image/upload/v1705754900/gol-res/pide-2_z3ej2o.jpg"
           alt=""
           layout="fill"
           className="hover:scale-150 transition-all"

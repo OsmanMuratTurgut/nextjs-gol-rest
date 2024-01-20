@@ -53,10 +53,10 @@ const Customers = () => {
       <Title addClass="text-[40px] text-center">Müşterilerimizin Yorumları</Title>
     
       <Slider {...settings}>
-        <CustomerItem imgSrc="/images/client1.jpg" />
-        <CustomerItem imgSrc="/images/client2.jpg" />
-        <CustomerItem imgSrc="/images/client1.jpg" />
-        <CustomerItem imgSrc="/images/client2.jpg" />
+        <CustomerItem imgSrc="https://res.cloudinary.com/dyurhicc6/image/upload/v1705755084/gol-res/client1_pp11zz.jpg" />
+        <CustomerItem imgSrc="https://res.cloudinary.com/dyurhicc6/image/upload/v1705755085/gol-res/client2_zcuu1g.jpg" />
+        <CustomerItem imgSrc="https://res.cloudinary.com/dyurhicc6/image/upload/v1705755084/gol-res/client1_pp11zz.jpg" />
+        <CustomerItem imgSrc="https://res.cloudinary.com/dyurhicc6/image/upload/v1705755085/gol-res/client2_zcuu1g.jpg" />
      
       </Slider>
     </div>
