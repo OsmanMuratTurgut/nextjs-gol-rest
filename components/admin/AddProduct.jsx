@@ -94,7 +94,7 @@ const AddProduct = ({ setIsProductModal }) => {
 
       if (res.status === 201) {
         setIsProductModal(false);
-        toast.success("Product created successfully!");
+        toast.success("Ürün başarı ile eklendi!");
       }
     } catch (err) {
       console.log(err);

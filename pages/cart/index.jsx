@@ -25,7 +25,7 @@ const Cart = ({ userList }) => {
   const createOrder = async () => {
     try {
       if (session) {
-        if (confirm("Are you sure to order?")) {
+        if (confirm("Sipariş vermek istiyor musunuz?")) {
           const res = await axios.post(
             `${process.env.NEXT_PUBLIC_API_URL}/orders`,
             newOrder
@@ -33,13 +33,13 @@ const Cart = ({ userList }) => {
           if (res.status === 201) {
             router.push(`/order/${res.data._id}`);
             dispatch(reset());
-            toast.success("Order created successfully", {
+            toast.success("Sipariş başarıyla oluşturuldu", {
               autoClose: 1000,
             });
           }
         }
       } else {
-        toast.error("Please login first.", {
+        toast.error("Lütfen önce giriş yapın.", {
           autoClose: 1000,
         });
       }

@@ -14,7 +14,7 @@ const Products = () => {
           `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`
         );
         if (res.status === 200) {
-          toast.success("Product Deleted!");
+          toast.success("Ürün silindi!");
           getProducts();
         }
       }
